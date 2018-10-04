@@ -1,0 +1,66 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+        <ion-buttons left>
+                <button ion-button icon-only  style="color: aliceblue" (click)="back()">
+                    <ion-icon name="arrow-back"></ion-icon>
+                </button>
+            </ion-buttons>
+
+
+
+</ion-header>
+
+
+<ion-content >
+    <form  [formGroup]="login" (ngSignUp)="login(login)">
+        <div id="grad1">
+
+  
+
+        <ion-card >
+            <ion-card-header>Login 
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list no-line>
+                
+                  <ion-item>
+                    <ion-label><ion-icon name = "mail">&nbsp;Email</ion-icon></ion-label>
+                      <ion-input formControlName="email" type="email" [(ngModel)] = "email"></ion-input>
+            
+                    </ion-item>
+                  
+                  <ion-item *ngIf="login.controls.email.invalid && login.controls.email.dirty">
+                      <p>incorrect email</p>
+                      
+                      </ion-item>
+                    <ion-item>
+                        <ion-label><ion-icon name = "lock" >&nbsp; Password</ion-icon></ion-label>
+                        <ion-input formControlName="password"  type="password" [(ngModel)] = "password"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="login.controls.password.invalid && login.controls.password.dirty">
+                        <p>please enter a valid password</p>
+                        
+              
+                      </ion-item>
+                
+                  <button ion-button round full  color="light" (click)="checkCredentials()">Log in</button>
+                  <button ion-button round full  color= google (click)="loginWithGoogle()" > <ion-icon name="logo-google">&nbsp;&nbsp;LOG IN WITH GOOGLE</ion-icon></button><br>
+                  <a (click)="reset()" style = "color:white">Forgot Password?</a><br>
+                  <a (click) = "showCheckbox()" style = "color:white">Don't have an account?</a>
+        
+              </ion-list>
+            </ion-card-content>
+        
+          </ion-card>
+          
+    
+    
+    </div>
+    </form>  
+
+</ion-content>
